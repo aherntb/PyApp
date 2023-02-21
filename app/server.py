@@ -1,6 +1,6 @@
 '''Server code'''
 
-import calculator
+from science import calculator
 
 
 def print_hello_world():
