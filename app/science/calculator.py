@@ -10,6 +10,7 @@ def add_numbers(*nums):
         return result
     except TypeError:
         print("You have not supplied the correct argument types")
+        raise
 
 
 def subtract_from_num(num, num_to_subtract):
@@ -20,6 +21,7 @@ def subtract_from_num(num, num_to_subtract):
         return result if result > 0 else 0
     except TypeError:
         print("You have not supplied the correct argument types")
+        raise
 
 
 def multiply_two_numbers(num_one, num_two):
@@ -28,3 +30,4 @@ def multiply_two_numbers(num_one, num_two):
         return num_one * num_two
     except TypeError:
         print("You have not supplied the correct argument types")
+        raise
