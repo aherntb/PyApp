@@ -1,6 +1,7 @@
 """Tests for the calculator module"""
 
 import unittest
+from unittest.mock import patch, MagicMock
 from science import calculator
 
 
@@ -42,6 +43,13 @@ class CalculatorTests(unittest.TestCase):
 
         self.assertRaises(TypeError, calculator.subtract_from_num, num_one,
                           num_two, "Exception should be thrown for strings")
+
+    def test_add_numbers_mocked_is_called_with_numbers(self):
+        """use a mock for the first time"""
+        with patch.object(calculator, "add_numbers", return_value=4) as mocked_method:
+            result = calculator.add_numbers(3, 4, 5)
+            mocked_method.assert_called_once_with(3, 4, 5)
+        self.assertEqual(result, 4, "Result was not correctly calculated")
 
 
 if __name__ == '__main__':
